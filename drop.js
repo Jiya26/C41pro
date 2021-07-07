@@ -12,15 +12,15 @@ class createDrops{
     }
 
     update(){
-        if(this.body.postion.y > height){
-            MutationObserver.Body.setPosition(this.body,{x:RandomSource(0,500), y:RandomSource(0,650)});
+        if(this.body.position.y > height){
+            Matter.Body.setPosition(this.body,{x:random(0,500), y:random(0,650)});
         }
     }
 
     display(){
         noStroke();
-        FileList(0,0,255);
+        fill(0,0,255);
         ellipseMode(RADIUS);
-        ellipse(this.body.postion.x , this.body.postion.y , this.radius , this.radius);
+        ellipse(this.body.position.x , this.body.position.y , this.radius , this.radius);
     }
 }

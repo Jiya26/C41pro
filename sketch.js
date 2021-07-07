@@ -11,23 +11,30 @@ var rand;
 var night;
 var Thunder, thunder1, thunder2, thunder3, thunder4;
 var thunderCreatedFrame = 0;
+var batman,man;
 
 
 function preload(){
-    night = loadImage("images/Walking Frame/rainynight.jpg");
-    thunder1 = loadImage("images/thunderbolt/1.png");
-    thunder2 = loadImage("images/thunderbolt/2.png");
-    thunder3 = loadImage("images/thunderbolt/3.png");
-    thunder4 = loadImage("images/thunderbolt/4.png");
+    night = loadImage("IMAGES/images/Walking Frame/rainynight.jpg");
+    thunder1 = loadImage("IMAGES/images/thunderbolt/1.png");
+    thunder2 = loadImage("IMAGES/images/thunderbolt/2.png");
+    thunder3 = loadImage("IMAGES/images/thunderbolt/3.png");
+    thunder4 = loadImage("IMAGES/images/thunderbolt/4.png");
+    man = loadAnimation("IMAGES/images/Walking Frame/walking_1.png","IMAGES/images/Walking Frame/walking_2.png","IMAGES/images/Walking Frame/walking_3.png","IMAGES/images/Walking Frame/walking_4.png","IMAGES/images/Walking Frame/walking_5.png","IMAGES/images/Walking Frame/walking_6.png","IMAGES/images/Walking Frame/walking_7.png","IMAGES/images/Walking Frame/walking_8.png");
 }
 
 function setup(){
     var canvas = createCanvas(500,700);
+    batman= createSprite(200,500);
+
+    batman.addAnimation("batman",man)
+    batman.scale=0.5;
 
     engine = Engine.create();
     world = engine.world;
     
     umbrella = new Umbrella(200,500);
+    
 
     for(var i = 0; i < maxDrops; i++){
         drops.push(new createDrops(random(0,500),random(0,500)));
